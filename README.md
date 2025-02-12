@@ -1,0 +1,1 @@
+# electron-check-biometric-auth-changed
