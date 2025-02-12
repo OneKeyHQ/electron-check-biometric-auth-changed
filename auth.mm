@@ -14,27 +14,18 @@ Napi::Value CheckBiometricAuthChanged(const Napi::CallbackInfo &info) {
   NSError *error = nil;
   bool changed = NO;
 
-  // Check if device supports biometric authentication
   if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
                            error:&error]) {
     [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:nil];
     NSData *domainState = [context evaluatedPolicyDomainState];
 
-    // load the last domain state from touch id
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *oldDomainState = [defaults objectForKey:@"macBiometricAuthState"];
 
     if (oldDomainState) {
-      // check for domain state changes
-      if ([oldDomainState isEqual:domainState]) {
-        NSLog(@"nothing changed.");
-      } else {
-        changed = YES;
-        NSLog(@"domain state was changed!");
-      }
+      changed = ![oldDomainState isEqual:domainState];
     }
 
-    // save the domain state that will be loaded next time
     [defaults setObject:domainState forKey:@"macBiometricAuthState"];
     [defaults synchronize];
   }
