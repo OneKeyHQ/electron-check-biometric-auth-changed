@@ -1,6 +1,6 @@
 {
   "name": "electron-check-biometric-auth-changed",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Query and handle native macOS biometric authentication changes.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -48,8 +48,5 @@
     "*.mm": [
       "clang-format -i"
     ]
-  },
-  "os": [
-    "darwin"
-  ]
+  }
 }
