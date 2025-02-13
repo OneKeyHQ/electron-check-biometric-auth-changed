@@ -1,11 +1,11 @@
 {
   "name": "electron-check-biometric-auth-changed",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Query and handle native macOS biometric authentication changes.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "install": "",
+    "install": "node-gyp rebuild",
     "build": "node-gyp rebuild",
     "clean": "node-gyp clean",
     "lint": "clang-format --dry-run -Werror auth.mm && prettier --check index.js",
