@@ -1,6 +1,6 @@
 {
   "name": "electron-check-biometric-auth-changed",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Query and handle native macOS biometric authentication changes.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -28,9 +28,6 @@
   "bugs": {
     "url": "https://github.com/OneKeyHQ/electron-check-biometric-auth-changed/issues"
   },
-  "os": [
-    "darwin"
-  ],
   "homepage": "https://github.com/OneKeyHQ/electron-check-biometric-auth-changed#readme",
   "dependencies": {
     "bindings": "^1.5.0",
